@@ -54,11 +54,23 @@ def bubble_sort(number_array):
     :return: sorted numeric array
     """
 
+    n = len(number_array)
+    for i in range(n - 1):
+        for num_idx in range(n - i - 1):
+            if number_array[num_idx] > number_array[num_idx + 1]:
+                number_array[num_idx], number_array[num_idx + 1] = number_array[num_idx + 1], number_array[num_idx]
+
+    return number_array
+
+
+# def insertion_sort
+
 
 def main():
     data = read_data("numbers.csv")
     print(data)
     print(selection_sort(data["series_1"]))
+    print(bubble_sort(data["series_2"]))
     pass
 
 
